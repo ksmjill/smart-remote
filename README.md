@@ -1,2 +1,3 @@
 # smart-remote
-To reduce the hassle.
+
+I'll write this someday.
