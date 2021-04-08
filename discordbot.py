@@ -60,7 +60,7 @@ async def greet():
     await channel.send("きたよ！")
 
 
-@client.event # イベントを受信するための構文. デコレータ（おまじない的な）
+@client.event 
 async def on_ready(): # 起動したときにターミナルにログイン通知を表示
     await greet()
     print("---------------------------------")
@@ -70,8 +70,7 @@ async def on_ready(): # 起動したときにターミナルにログイン通�
     print("---------------------------------")
     # iPhoneが接続しているかどうか判定し接続していない場合強制終了したい
 
-
-@client.event # おまじない的な
+@client.event
 async def on_message(message):
     if client.user != message.author:
         if message.content.startswith("おはよ"):
@@ -79,7 +78,6 @@ async def on_message(message):
             await message.channel.send(m)
         if message.content.startswith("エアコン"): # エアコンつける
             await aircon_on(message)
-
 
 @tasks.loop(seconds=5) # wifi接続判定
 async def loop():
